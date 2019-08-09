@@ -3,12 +3,44 @@
  */
 package bitmap.transformer;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args) throws IOException {
+        String input = args[0];
+        String output = args[1];
+        String transform = args[2];
+
+        File bmpFile = new File(input);
+        BufferedImage image = ImageIO.read(bmpFile);
+
+
+        System.out.println(transform);
+        Bitmap Test =  new Bitmap(image);
+        if (transform.equals("transformGreyScale")) {
+            Test.transformGreyScale();
+        }
+
+        if (transform.equals("transformPixelate")){
+            System.out.println("I'm pixel");
+            Test.transformPixelate();
+        }
+
+        if ( transform.equals("transformNegative")){
+            Test.transformNegative();
+        }
+
+
+        ImageIO.write(Test.getImage(), "bmp", new File(output));
+
+
     }
+
 }
