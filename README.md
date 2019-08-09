@@ -15,9 +15,9 @@ __transform__:
 - "transformPixelate" Turns the image to an adorable pixel image
 - "transformNegative" Turns the image to a photo negative
 
-__example: 
+__example__: 
 
-./gradlew run --args 'src/main/resources/Coffee.bmp src/main/resources/CoffeeNegative.bmp transformNegative'
+`./gradlew run --args 'src/main/resources/Coffee.bmp src/main/resources/CoffeeNegative.bmp transformNegative'`
 
 ## Resources
 
