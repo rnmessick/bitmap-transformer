@@ -6,14 +6,19 @@ Take a bitmap image and do all sorts of fun stuff via the command line
 Peter Lee and Renee Messick
 
 ## Transform Methods
-__input__: file path name(src\main\resources\Coffee.bmp)
+__input__: file path name(src/main/resources/Coffee.bmp)
 
-__output__: new file path name(src\main\resources\CoffeeNegative.bmp)
+__output__: new file path name(src/main/resources/{yourFileNameChoice}.bmp)
 
 __transform__:
 - "transformGreyScale" Turns the image to a black and white
 - "transformPixelate" Turns the image to an adorable pixel image
 - "transformNegative" Turns the image to a photo negative
+
+__example: 
+
+./gradlew run --args 'src/main/resources/Coffee.bmp src/main/resources/CoffeeNegative.bmp transformNegative'
+
 ## Resources
 
 http://paulbourke.net/dataformats/bitmaps/
